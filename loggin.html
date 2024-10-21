@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPITETIVE LOGGIN EXAM PAGE </title>
+    <!-- <script src="exam.js"></script> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Courier New', Courier, monospace; */
+        }
+            body{
+                display: grid;
+                justify-content: center ;
+                align-items: center;
+                min-height: 90vh;
+            background-image: url(bg.png.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+                
+                
+            }
+            .wrapper{
+                position: relative;
+                left: 15%;
+                display: flex;
+                justify-content: center;
+                width: 400px;
+                height: 500px;
+                box-shadow: 5px 5px 60px;
+                border-radius: 10px;
+            }
+            h2{
+                font-size: 2em;
+                color: red;
+                text-align: center;
+            }
+            .input-group{
+                position: relative;
+                width: ;
+                margin: 15px 0;
+            }
+            .input-group input{
+                
+                height: 30px;
+                font-size: 1em;
+                color:red;
+                padding: 0 10px 0 35px;
+                background: transparent;
+                border: 1px solid brown;
+                outline:none ;
+                border-radius: 8px;
+
+            }
+            .input-group input::placeholder{
+                color: rgb(89, 89, 150);
+            }
+            .input-group.icon{
+                position: absolute;
+                display: block;
+                left: 10px;
+                color: blueviolet;
+                font-size: 1.2em;
+                line-height: 45px; <!-- Webcam Access Request -->
+        <video id="webcamVideo" width="100%" height="300" autoplay></video>
+
+    </div>
+
+    <script>
+        // Request webcam access
+        async function startWebcam() {
+            const video = document.getElementById('webcamVideo');
+            
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+
+                // Handle webcam stream here if needed
+            } catch (err) {
+                console.error("Error accessing webcam:", err);
+                alert("Unable to access webcam. Please check your permissions.");
+            }
+        }
+
+        // Call the function to start the webcam
+        startWebcam();
+
+        // Anti-tab feature
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                alert("Please do not switch tabs during the exam.");
+                // Optionally, you can stop the webcam or take other actions here
+                // Example:
+                // const video = document.getElementById('webcamVideo');
+                // video.srcObject.getTracks().forEach(track => track.stop());
+            }
+        });
+
+        // Disable copy functionality
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert("Copying is disabled during the exam.");
+        });
+
+        // Form submission handling
+        function handleSubmit() {
+            // Perform form validation or data processing here
+
+            alert("Exam submitted successfully!");
+            
+            // Prevent actual form submission for demonstration
+            return false; 
+        }
+    </script>
+            
+            }
+            .btn:hover{
+                background:  green;
+                color: beige;
+                
+                
+            }
+            .sign-link{
+                font-size: .9em;
+                text-align: center;
+                margin: 25px 0;
+            }
+            .sign-link p a{
+                color: beige;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            .sign-link p a:hover{
+                text-decoration: dotted;
+            }
+            .button {
+    position: relative;
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    background:brown;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+    font-size: 1.5em;
+    color: black;
+    font-weight: 550;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .5s;
+}
+.button:hover {
+    background:white;
+    color: red;
+    
+}
+.sign-link {
+    font-size: .9em;
+    text-align: center;
+    margin: 25px 0;
+}
+.sign-link p {
+    color:black;
+}
+.sign-link p a {
+    color:red
+    text-decoration: none;
+    font-weight: 600;
+}
+.sign-link p a:hover {
+    text-decoration: underline;
+}
+.input-groups{
+    position: relative;
+    width:100%;
+    height: 10px;
+    justify-content: center;
+    left: 5%;
+    border-radius: 10px;
+
+}
+
+
+
+
+            
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="post">
+            &nbsp;
+        <h2>Login</h2>
+        &nbsp;  &nbsp;  &nbsp;
+        <div class="input-group">
+        <span class="icon"></span>
+            <ion-icon name="person"></ion-icon>
+            <input type="text" placeholder="Username"rquied>
+    </div>
+    &nbsp;  &nbsp;  &nbsp;
+    <div class="input-group">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <input type="password" placeholder="Password" maxlength="6">
+        </div>
+        <button</button>
+        <!-- <div class="input-groups"> 
+            <span class="icon"><ion-icon name="aperture"></ion-icon> 
+            </span>
+            <button>refresh</button> -->
+
+                <!-- <input type="text" placeholder="capture"rquied> -->
+        <!-- <div class="ref">
+        <input type="text"placeholder="capture">
+        <button>refresh</button> -->
+        <!-- <button type="url"class="btn" >LOGIN </button>
+        <div class="sign-linl "> -->
+            &nbsp;  &nbsp;  &nbsp;
+            <div class="button">
+                  &nbsp;<a href="web1st.html" value="Login" onclick="validate()">Login</a>
+                <!-- <input type="submit" name="" value="LOGIN"onclick="validate()" > -->
+
+            </div>
+            <!-- <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div> -->
+        
+</form>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!-- <script src="https://www.google.com/recaptcha" async defer></script> -->
+
+ 
+</html>

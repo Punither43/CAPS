@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+/* button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    /* color: white; */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+.button{
+    
+    text-align: center;
+    position: relative;
+    width: 40%;
+    height: 30px;
+    background-color: green;
+    color: red;
+    background-size: contain;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+    font-size: x-large;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 550;
+    border: none;
+    outline: none;
+    transition: .5s;
+   
+
+
+
+
+}
+.button:hover {
+    background:white;
+    color: black;
+
+    </style>
+</head>
+<body>
+    <!-- Webcam Access Request -->
+        <video id="webcamVideo" width="100%" height="300" autoplay></video>
+
+    </div>
+
+    <script>
+        // Request webcam access
+        async function startWebcam() {
+            const video = document.getElementById('webcamVideo');
+            
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+
+                // Handle webcam stream here if needed
+            } catch (err) {
+                console.error("Error accessing webcam:", err);
+                alert("Unable to access webcam. Please check your permissions.");
+            }
+        }
+
+        // Call the function to start the webcam
+        startWebcam();
+
+        // Anti-tab feature
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                alert("Please do not switch tabs during the exam.");
+                // Optionally, you can stop the webcam or take other actions here
+                // Example:
+                // const video = document.getElementById('webcamVideo');
+                // video.srcObject.getTracks().forEach(track => track.stop());
+            }
+        });
+
+        // Disable copy functionality
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert("Copying is disabled during the exam.");
+        });
+
+        // Form submission handling
+        function handleSubmit() {
+            // Perform form validation or data processing here
+
+            alert("Exam submitted successfully!");
+            
+            // Prevent actual form submission for demonstration
+            return false; 
+        }
+    </script>
+    <div class="container">
+        <h1>Online Exam</h1>
+        <form onsubmit="return handle">
+            <div class="question">
+                <p>1. What is the capital of France?</p>
+                <label><input type="radio" name="q1" value="a"> a) Berlin</label><br>
+                <label><input type="radio" name="q1" value="b"> b) Madrid</label><br>
+                <label><input type="radio" name="q1" value="c"> c) Paris</label><br>
+                <label><input type="radio" name="q1" value="d"> d) Rome</label>
+            </div>
+
+            <div class="question">
+                <p>2. Who wrote 'Hamlet'?</p>
+                <label><input type="radio" name="q2" value="a"> a) Charles Dickens</label><br>
+                <label><input type="radio" name="q2" value="b"> b) William Shakespeare</label><br>
+                <label><input type="radio" name="q2" value="c"> c) Mark Twain</label><br>
+                <label><input type="radio" name="q2" value="d"> d) Jane Austen</label>
+            </div>
+
+            <div class="question">
+                <p>3. What is the chemical symbol for water?</p>
+                <label><input type="radio" name="q3" value="a"> a) CO2</label><br>
+                <label><input type="radio" name="q3" value="b"> b) H2O</label><br>
+                <label><input type="radio" name="q3" value="c"> c) O2</label><br>
+                <label><input type="radio" name="q3" value="d"> d) NaCl</label>
+            </div>
+            <div class="question">
+                <p>4. What is the capital of France?</p>
+                <label><input type="radio" name="q4" value="a"> a) Berlin</label><br>
+                <label><input type="radio" name="q4" value="b"> b) Madrid</label><br>
+                <label><input type="radio" name="q4" value="c"> c) Paris</label><br>
+                <label><input type="radio" name="q4" value="d"> d) Rome</label>
+            </div>
+
+            <div class="question">
+                <p>5. Who wrote 'Hamlet'?</p>
+                <label><input type="radio" name="q5" value="a"> a) Charles Dickens</label><br>
+                <label><input type="radio" name="q5" value="b"> b) William Shakespeare</label><br>
+                <label><input type="radio" name="q5" value="c"> c) Mark Twain</label><br>
+                <label><input type="radio" name="q5" value="d"> d) Jane Austen</label>
+            </div>
+
+            <div class="question">
+                <p>6. What is the chemical symbol for water?</p>
+                <label><input type="radio" name="q6" value="a"> a) CO2</label><br>
+                <label><input type="radio" name="q6" value="b"> b) H2O</label><br>
+                <label><input type="radio" name="q6" value="c"> c) O2</label><br>
+                <label><input type="radio" name="q6" value="d"> d) NaCl</label>
+            </div>
+            <div class="button">
+            <a href="submit.html">submit</a>
+            </div>
+           
+
+            
+        </form>
+       
+</body>
+</html>
+        
+    
+    
+</body>
+</html>

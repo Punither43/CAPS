@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam Instructions</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color:black;
+}
+
+.instructions {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color:black;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+.start-btn {
+    position: relative;
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    background:brown;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+    font-size: 1.5em;
+    color: black;
+    font-weight: 550;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .5s;
+    background-position: center;
+}
+
+
+.start-btn:hover {
+    background-color:white;
+    text-align: center;
+    background-position: center;
+}
+
+#timer {
+    font-weight: bold;
+    color: #d9534f; /* Bootstrap danger color */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Online Exam Instructions</h1>
+        </header>
+        <main>
+            <section class="instructions">
+                <h2>Instructions</h2>
+                <ul>
+                    <li>Ensure a stable internet connection.</li>
+                    <li>Read each question carefully before answering.</li>
+                    <li>No external resources are allowed during the exam.</li>
+                    <li>Time limit: <span id="timer">60:00</span></li>
+                    <li>Click "Start Exam" to begin.</li>
+                </ul>
+            </section>
+            <button class="start-btn">
+                <a href="web2.html">START EXAM</a>
+            </button>
+        </main>
+    </div>
+
+    <!-- <script>
+        let timer;
+        let timeLeft = 3600; // 60 minutes in seconds
+
+        function startExam() {
+            document.querySelector('.start-btn').disabled = true;
+            document.querySelector('.start-btn').innerText = "Exam Started";
+            startTimer();
+        }
+
+        function startTimer() {
+            timer = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    alert("Time's up! The exam has ended.");
+                    return;
+                }
+                timeLeft--;
+                updateTimerDisplay();
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').innerText = 
+                ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')};
+        }
+    </script> -->
+</body>
+</html>
